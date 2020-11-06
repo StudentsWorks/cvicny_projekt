@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CmZMsWsN6jcig9wlz6sI5vN1M1yLxXMYvJqEqGPY0S+q1iEhl+FuzcrLNpUXWQ4IDI2Zd0VPvWWOkehGz8aIVA==",
+  "dgSpecHash": "ZF2r8c1fL9o/fJWQQ0sBW7rvYljrqofEcMn7frR33bMjj88SaEacz/xTidR9IoheXDmBrhsZMK2hZhorQfd4xQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Simon\\Documents\\GITHUB\\cvicny_projekt\\InzeratnyPortal\\InzeratnyPortal.csproj",
+  "projectFilePath": "C:\\Users\\Simon\\Documents\\GITHUB\\superprogramatory\\cvicny_projekt\\InzeratnyPortal\\InzeratnyPortal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "C:\\Users\\Simon\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.9\\microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",

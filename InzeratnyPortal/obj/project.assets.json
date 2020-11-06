@@ -8846,11 +8846,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Simon\\Documents\\GITHUB\\cvicny_projekt\\InzeratnyPortal\\InzeratnyPortal.csproj",
+      "projectUniqueName": "C:\\Users\\Simon\\Documents\\GITHUB\\superprogramatory\\cvicny_projekt\\InzeratnyPortal\\InzeratnyPortal.csproj",
       "projectName": "InzeratnyPortal",
-      "projectPath": "C:\\Users\\Simon\\Documents\\GITHUB\\cvicny_projekt\\InzeratnyPortal\\InzeratnyPortal.csproj",
+      "projectPath": "C:\\Users\\Simon\\Documents\\GITHUB\\superprogramatory\\cvicny_projekt\\InzeratnyPortal\\InzeratnyPortal.csproj",
       "packagesPath": "C:\\Users\\Simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Simon\\Documents\\GITHUB\\cvicny_projekt\\InzeratnyPortal\\obj\\",
+      "outputPath": "C:\\Users\\Simon\\Documents\\GITHUB\\superprogramatory\\cvicny_projekt\\InzeratnyPortal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
