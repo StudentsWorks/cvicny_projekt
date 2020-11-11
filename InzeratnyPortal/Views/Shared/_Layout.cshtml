@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - InzeratnyPortal</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/5a421bec8e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">InzeratnyPortal</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Inzertný portál</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,11 +21,18 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Domov</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <span style="cursor:pointer" class="nav-link text-dark" onclick="openNav()">Filter</span>
+                        </li>
+                        <li class="nav-item">
+                            <span style="cursor:pointer" class="nav-link text-dark"> <i class="fas fa-plus"></i> Pridať inzerát </span>
+                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -33,9 +41,52 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            
         </main>
     </div>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1 style="color:white;margin:10px">Vyhľadávanie</h1>
+        <div class="form-group col-md-4 search">
+            <label for="inputState" class="volba">Kategória</label>
+            <select id="inputState" class="form-control ">
+                <option selected>Zvoľ...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4 search">
+            <label for="inputState" class="volba">Transakcia</label>
+            <select id="inputState" class="form-control">
+                <option selected>Zvoľ...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4 search">
+            <label for="inputState" class="volba">Stav</label>
+            <select id="inputState" class="form-control">
+                <option selected>Zvoľ...</option>
+                <option>...</option>
+            </select>
+        </div>
+       
+        <div class="form-group col-md-4 ">
+            <label class="volba">Cena</label>
 
+        </div>
+
+    </div>
+   
+
+
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2020 - InzeratnyPortal - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
