@@ -1,19 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using InzeratnyPortal.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace InzeratnyPortal.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly ApplicationDbContext _context;
 
-        public AdminController(UserManager<IdentityUser> userManager)
+        public AdminController(UserManager<IdentityUser> userManager, ApplicationDbContext context)
         {
             _userManager = userManager;
+            _context = context;
         }
 
         public async Task<IActionResult> IndexAsync()
@@ -22,35 +25,26 @@ namespace InzeratnyPortal.Controllers
             return View(users);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> DeleteUserAsync(string id)
+
+        public IActionResult DeleteUser(string id)
         {
-            var user = await _userManager.FindByIdAsync(id);
-             
-            if (user == null)
-            {
-              
-                return View("NotFound");
-            }
-            else
-            {
-               var result = await _userManager.DeleteAsync(user);
+            var items = _context.Item.Where(item => item.UserID == id);
 
-                if (result.Succeeded)
-                {
-                    return RedirectToAction("ListUsers");
-                }
-                //ak sa pri mazani vyskytnu nejake chyby
-                foreach(var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
-
-                return View("ListUsers");
+            foreach (var i in items)
+            {
+                _context.Item.Remove(i);
+               
             }
+            _context.SaveChanges();
+
+            var user = _context.Users.Where(user => user.Id == id).FirstOrDefault();
+
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Admin");
+
         }
-
-
 
     }
 }

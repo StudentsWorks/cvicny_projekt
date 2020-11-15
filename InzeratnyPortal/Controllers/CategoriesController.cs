@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using InzeratnyPortal.Data;
 using InzeratnyPortal.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InzeratnyPortal.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext _context;

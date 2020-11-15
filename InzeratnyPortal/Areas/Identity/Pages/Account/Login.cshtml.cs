@@ -21,7 +21,7 @@ namespace InzeratnyPortal.Areas.Identity.Pages.Account
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, 
+        public LoginModel(SignInManager<IdentityUser> signInManager,
             ILogger<LoginModel> logger,
             UserManager<IdentityUser> userManager)
         {
@@ -71,7 +71,7 @@ namespace InzeratnyPortal.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        public async Task<IActionResult> OnPostAsync(string red, string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
 
@@ -87,14 +87,15 @@ namespace InzeratnyPortal.Areas.Identity.Pages.Account
                     var user = await _userManager.FindByEmailAsync(Input.Email);
 
                     var roles = await _userManager.GetRolesAsync(user);
-                    
+
                     if (roles.Contains("Admin"))
                     {
                         return RedirectToAction("Index", "Admin");
                     }
                     else
                     {
-                        return RedirectToAction("Index", "User");
+                        return RedirectToAction("Create", "Items");
+
                     }
 
                     //return LocalRedirect(returnUrl);

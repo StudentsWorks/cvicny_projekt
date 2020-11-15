@@ -9,9 +9,11 @@ using InzeratnyPortal.Data;
 using InzeratnyPortal.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InzeratnyPortal.Controllers
 {
+    [Authorize(Roles = "User")]
     public class ItemsController : Controller
     {
         private readonly ApplicationDbContext _context;
