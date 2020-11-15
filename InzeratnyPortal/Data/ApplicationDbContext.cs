@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using InzeratnyPortal.Models;
 
 namespace InzeratnyPortal.Data
 {
@@ -12,5 +13,7 @@ namespace InzeratnyPortal.Data
             : base(options)
         {
         }
+        public DbSet<InzeratnyPortal.Models.Category> Category { get; set; }
+        public DbSet<InzeratnyPortal.Models.Item> Item { get; set; }
     }
 }

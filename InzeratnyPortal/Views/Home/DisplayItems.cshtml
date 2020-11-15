@@ -1,0 +1,25 @@
+﻿@model IQueryable<Item>
+
+@{
+    Layout = "_Layout";
+}
+
+@if (Model.Any())
+{
+
+    @foreach (var item in Model)
+    {
+        <div class="card inzerat" style="width: 18rem;">
+            <img class="card-img-top" src="~/img/@item.Obrazok" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@item.Nazov</h5>
+                <p class="card-text">@item.Popis</p>
+            </div>
+
+        </div>
+    }
+}
+else
+{
+    <p>Žiadne výsledky</p>
+}

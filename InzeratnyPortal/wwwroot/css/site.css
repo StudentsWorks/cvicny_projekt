@@ -159,8 +159,7 @@ body {
     .popis_kategorie:hover {
         text-decoration: none;
         color: black;
-        transition: 0.3s;
-       
+        transition: 0.3s;     
     }
 .logo_kategorie:hover {
     text-decoration: none;

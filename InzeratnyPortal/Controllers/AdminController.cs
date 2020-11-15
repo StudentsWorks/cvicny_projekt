@@ -16,12 +16,7 @@ namespace InzeratnyPortal.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public async Task<IActionResult> ListUsersAsync()
+        public async Task<IActionResult> IndexAsync()
         {
             var users = await _userManager.GetUsersInRoleAsync("User"); //Vsetci uzivatelia okrem admina
             return View(users);

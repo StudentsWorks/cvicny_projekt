@@ -1,0 +1,75 @@
+﻿
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 180px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #cccccc;
+        display: block;
+        margin-top: 20px;
+    }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+.sidenav img {
+    border-radius: 50%;
+}
+
+.avatar_obrazok_side_menu {
+    margin-left:17%;
+}
+
+.card{
+    margin-left:15%;
+    margin-top:5%;
+    float:left;
+}
+.ikonky{
+    float:right;
+}
+.table{
+    margin-top:3%;
+    margin-left: 15%;
+    width: 1000px;
+}
+.in_table{
+    margin-right:5%;
+}
+
+#ctn{
+    margin-left:180px;
+}

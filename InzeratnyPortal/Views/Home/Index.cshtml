@@ -1,54 +1,58 @@
 ﻿@{
     ViewData["Title"] = "Inzertný portál";
 }
+
+@{ 
+    Layout = "_Layout";
+}
 <div class="container">
     <h4>Výber kategórie</h4>
         <div class="card karta">
             <div class="card-body">
-                <a href="#" class="logo_kategorie"> <i class="fas fa-dog"></i></a>
-                <a href="#" class="popis_kategorie"> Zvieratá</a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Zvieratá" class="logo_kategorie"> <i class="fas fa-dog"></i></a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Zvieratá" class="popis_kategorie"> Zvieratá</a>
             </div>
         </div>
         <div class="card karta">
             <div class="card-body">
-                <a href="#" class="logo_kategorie"> <i class="fas fa-briefcase"></i></a>
-                <a href="#" class="popis_kategorie"> Práca</a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Práca" class="logo_kategorie"> <i class="fas fa-briefcase"></i></a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Práca" class="popis_kategorie"> Práca</a>
             </div>
         </div>
         <div class="card karta">
             <div class="card-body">
-                <a href="#" class="logo_kategorie"> <i class="fas fa-car"></i></a>
-                <a href="#" class="popis_kategorie"> Auto</a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Auto" class="logo_kategorie"> <i class="fas fa-car"></i></a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Auto" class="popis_kategorie"> Auto</a>
             </div>
         </div>
         <div class="card karta">
             <div class="card-body">
-                <a href="#" class="logo_kategorie"> <i class="fas fa-plug"></i></a>
-                <a href="#" class="popis_kategorie"> Elektro</a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Elektro" class="logo_kategorie"> <i class="fas fa-plug"></i></a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Elektro" class="popis_kategorie"> Elektro</a>
             </div>
         </div>
         <div class="card karta">
             <div class="card-body">
-                <a href="#" class="logo_kategorie"> <i class="fas fa-mobile-alt"></i></a>
-                <a href="#" class="popis_kategorie"> Mobily</a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Mobily" class="logo_kategorie"> <i class="fas fa-mobile-alt"></i></a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Mobily" class="popis_kategorie"> Mobily</a>
             </div>
         </div>
         <div class="card karta">
             <div class="card-body">
-                <a href="#" class="logo_kategorie"> <i class="fas fa-volleyball-ball"></i></a>
-                <a href="#" class="popis_kategorie"> Šport</a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Šport" class="logo_kategorie"> <i class="fas fa-volleyball-ball"></i></a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Šport" class="popis_kategorie"> Šport</a>
             </div>
         </div>
         <div class="card karta">
             <div class="card-body">
-                <a href="#" class="logo_kategorie"> <i class="fas fa-ticket-alt"></i></a>
-                <a href="#" class="popis_kategorie">Zábava</a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Zábava" class="logo_kategorie"> <i class="fas fa-ticket-alt"></i></a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Zábava" class="popis_kategorie">Zábava</a>
             </div>
         </div>
         <div class="card karta">
             <div class="card-body">
-                <a href="#" class="logo_kategorie"> <i class="fas fa-align-center"></i></a>
-                <a href="#" class="popis_kategorie"> Iné</a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Iné" class="logo_kategorie"> <i class="fas fa-align-center"></i></a>
+                <a asp-action="DisplayItems" asp-controller="Home" asp-route-what="Iné" class="popis_kategorie"> Iné</a>
             </div>
         </div>
 
