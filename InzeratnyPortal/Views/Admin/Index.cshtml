@@ -4,7 +4,7 @@
     Layout = "_adminLayout";
 }
 
-<h1>Users</h1>
+
 
 @*<a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>*@
 
@@ -17,22 +17,18 @@
             <thead>
                 <tr class="in_table">
                     <th scope="col">ID</th>
-                    <th scope="col">Meno</th>
-                    <th scope="col">Priezvisko</th>
-                    <th scope="col">Adresa</th>
+                   
                     <th scope="col">E-mail</th>
-                    <th scope="col">Tel. číslo</th>
+                    
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="in_table">
                     <th scope="row">@user.Id</th>
-                    <td>Adam</td>
-                    <td>Vávro</td>
-                    <td>Komárňanská 47B</td>
+                   
                     <td>@user.Email</td>
-                    <td>0908669738</td>
+                    
                     <td>
                         <div class="ikonky">
                             <a asp-area="Identity" asp-page="/Account/Manage">

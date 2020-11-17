@@ -76,7 +76,7 @@ body {
 }
 .overlay {
     height: 0%;
-    width: 75%;
+    width: 50%;
     position: fixed;
     z-index: 1;
     top: 0;
