@@ -13,6 +13,9 @@
                 <button type="submit" class="nav-link btn btn-link text-dark">Odhlásiť sa</button>
             </form>
         </li>
+        <li class="nav-item ml-1">
+            <a class="nav-link text-dark" asp-action="Index" asp-controller="User">Backend</a>
+        </li>
     }
     else
     {
@@ -22,8 +25,6 @@
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Prihlásiť sa</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-action="Index" asp-controller="User">Backend</a>
-        </li>
+
     }
 </ul>

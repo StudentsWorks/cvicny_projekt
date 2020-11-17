@@ -21,20 +21,20 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         @*<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Domov</a>
-                        </li>*@
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Domov</a>
+                            </li>*@
                         @*<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>*@
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>*@
                         <li class="nav-item">
                             <span style="cursor:pointer" class="nav-link text-dark" onclick="openNav()">Filter</span>
                         </li>
                         <li class="nav-item">
                             <a asp-action="Create" asp-controller="Items" asp-route-red="create">
-                            <span style="cursor:pointer" class="nav-link text-dark"> <i class="fas fa-plus"></i> Pridať inzerát </span>
-                                </a>
+                                <span style="cursor:pointer" class="nav-link text-dark"> <i class="fas fa-plus"></i> Pridať inzerát </span>
+                            </a>
                         </li>
-
+                       
                     </ul>
                 </div>
             </div>
@@ -43,11 +43,11 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
-            
+
         </main>
     </div>
-    
-   
+
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2020 - InzeratnyPortal @*- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
