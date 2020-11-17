@@ -11,12 +11,15 @@ namespace InzeratnyPortal.Models
     {
         public int ID { get; set; }
         [Required]
+
+        [Display(Name = "Názov")]
         public string Nazov { get; set; }
         public string Popis { get; set; }
 
         [Column(TypeName = "decimal(7,2)")]
         public decimal Cena { get; set; }
 
+        [Display(Name = "Obrázok")]
         public string Obrazok { get; set; }
 
         [ForeignKey("Category")]

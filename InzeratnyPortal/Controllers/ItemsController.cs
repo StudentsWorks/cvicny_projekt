@@ -97,7 +97,7 @@ namespace InzeratnyPortal.Controllers
 
                     _context.Add(item);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create", "Items");
             }
             ViewData["UserID"] = new SelectList(_context.Set<AppUser>(), "Id", "Id", item.UserID);
             ViewData["CategoryID"] = new SelectList(_context.Category, "ID", "Nazov", item.CategoryID);
@@ -152,7 +152,7 @@ namespace InzeratnyPortal.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "User");
             }
             ViewData["UserID"] = new SelectList(_context.Set<AppUser>(), "Id", "Id", item.UserID);
             ViewData["CategoryID"] = new SelectList(_context.Category, "ID", "Nazov", item.CategoryID);
@@ -187,7 +187,7 @@ namespace InzeratnyPortal.Controllers
             var item = await _context.Item.FindAsync(id);
             _context.Item.Remove(item);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "User");
         }
 
         private bool ItemExists(int id)

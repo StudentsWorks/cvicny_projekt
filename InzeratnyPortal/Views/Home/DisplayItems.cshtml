@@ -1,21 +1,25 @@
-﻿@model IQueryable<Item>
+﻿@model ItemsCategories
 
 @{
     Layout = "_Layout";
 }
 
-@if (Model.Any())
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@if (Model.Items.Any())
 {
 
-    @foreach (var item in Model)
+    @foreach (var item in Model.Items)
     {
         <div class="card inzerat" style="width: 18rem;">
             <img class="card-img-top" src="~/img/@item.Obrazok" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">@item.Nazov</h5>
                 <p class="card-text">@item.Popis</p>
+                <p class="card-text">@item.Cena Eur </p>
             </div>
-
         </div>
     }
 }
@@ -23,3 +27,56 @@ else
 {
     <p>Žiadne výsledky</p>
 }
+
+
+<div id="myNav" class="overlay">
+    <form method="post" asp-action="SearchResults" asp-controller="Home">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1 style="color:white;margin:10px">Vyhľadávanie</h1>
+        <div class="form-group col-md-4 search">
+            <label for="text" class="volba">Vyhľadávanie</label>
+            <input type="text" value="" name="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu napíšte čo chcete vyhľadávať....">
+
+        </div>
+
+        <div class="form-group col-md-4 search">
+            <label for="inputState" class="volba">Kategória</label>
+            <input value="@Model.Categories.FirstOrDefault().ID" type="number" id="ipt" class="hidden" name="category" />
+            <select id="inputState" class="form-control" onchange="changeValue()">
+                @foreach (var cat in Model.Categories)
+                {
+                    <option value="@cat.ID">@cat.Nazov</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group col-md-4 ">
+            <label class="volba">Cena</label>
+            <div class="row">
+                <div class="col">
+                    <p style="color:white">Od</p>
+                    <input type="text" value="" name="priceFrom" class="form-control" placeholder="Cena od">
+                </div>
+                <div class="col">
+                    <p style="color:white">Do</p>
+                    <input type="text" value="" class="form-control" name="priceTo" placeholder="Cena do">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-secondary" style="margin:15px;">Vyhľadaj</button>
+    </form>
+</div>
+
+<script>
+    function changeValue() {
+        $("#ipt").val($("#inputState").val());
+    }
+
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>

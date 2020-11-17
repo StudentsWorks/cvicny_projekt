@@ -11,18 +11,16 @@
 </head>
 <body>
     <div class="sidenav">
-       
+
         <a asp-action="Index" asp-controller="Admin">Zoznam užívateľov</a>
         <a asp-area="Identity" asp-page="/Account/Register">Pridať užívateľa</a>
         <a asp-area="Identity" asp-page="/Account/Manage/Index">Upraviť profil</a>
+        <a asp-action="Create" asp-controller="Categories">Pridať kategórie</a>
         <a asp-area="Identity" asp-page="/Account/Logout">Odhlasiť</a>
-        <a asp-action="Create" asp-controller="Categories">kk</a>
-        <a asp-action="Create" asp-controller="Items">aa</a>
     </div>
 
     <div id="ctn" class="container">
-
-    @RenderBody()
+        @RenderBody()
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -18,7 +18,7 @@
 
                 <!--Ikonky-->
                 <div class="ikonky">
-                    <a asp-action="Details" asp-route-id="@item.ID">
+                    <a asp-action="Details" asp-controller="Items" asp-route-id="@item.ID">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-presentation" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <line x1="3" y1="4" x2="21" y2="4" />
@@ -29,7 +29,7 @@
                         </svg>
                     </a>
 
-                    <a asp-action="Edit" asp-route-id="@item.ID">
+                    <a asp-action="Edit" asp-controller="Items" asp-route-id="@item.ID">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
@@ -38,7 +38,7 @@
                         </svg>
                     </a>
 
-                    <a asp-action="Delete" asp-route-id="@item.ID">
+                    <a asp-action="Delete" asp-controller="Items" asp-route-id="@item.ID">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <line x1="4" y1="7" x2="20" y2="7" />

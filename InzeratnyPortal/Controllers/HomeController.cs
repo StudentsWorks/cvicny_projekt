@@ -2,6 +2,7 @@
 using InzeratnyPortal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 using System.Linq;
 
@@ -20,7 +21,12 @@ namespace InzeratnyPortal.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (_context.Item.Count() < 6)
+            {
+                return View(new ItemsCategories() { Items = _context.Item, Categories = _context.Category });
+            }
+
+            return View(new ItemsCategories() { Items = _context.Item.Take(6), Categories = _context.Category });
         }
 
         public IActionResult Privacy()
@@ -38,7 +44,35 @@ namespace InzeratnyPortal.Controllers
         {
             var categoryId = _context.Category.Where(cat => cat.Nazov == what).First().ID;
             var items = _context.Item.Where(item => item.CategoryID == categoryId);
-            return View(items);
+            return View(new ItemsCategories() { Items = items, Categories = _context.Category });
         }
+
+
+        [HttpPost]
+        public IActionResult SearchResults(int category, string text, string priceTo, string priceFrom)
+        {
+            var categoryId = _context.Category.Where(cat => cat.ID == category).First().ID;
+            var items = _context.Item.Where(item => item.CategoryID == categoryId);
+            Console.WriteLine("sdf");
+            Console.WriteLine(text);
+            if (text != null)
+            {
+                items = items.Where(item => (item.Nazov.Contains(text) || item.Popis.Contains(text)));
+            }
+
+            if (priceFrom != null)
+            {
+                items = items.Where(item => item.Cena >= Convert.ToDecimal(priceFrom));
+            }
+            if (priceTo != null)
+            {
+                items = items.Where(item => item.Cena <= Convert.ToDecimal(priceTo));
+            }
+
+
+            return View("DisplayItems", new ItemsCategories() { Items = items, Categories = _context.Category });
+        }
+
+
     }
 }

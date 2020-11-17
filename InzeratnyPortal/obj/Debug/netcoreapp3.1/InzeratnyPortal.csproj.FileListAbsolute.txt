@@ -1098,3 +1098,4 @@ C:\Users\marti\Source\Repos\cvicny_projekt4\InzeratnyPortal\obj\Debug\netcoreapp
 C:\Users\marti\Source\Repos\cvicny_projekt4\InzeratnyPortal\obj\Debug\netcoreapp3.1\InzeratnyPortal.dll
 C:\Users\marti\Source\Repos\cvicny_projekt4\InzeratnyPortal\obj\Debug\netcoreapp3.1\InzeratnyPortal.pdb
 C:\Users\marti\Source\Repos\cvicny_projekt4\InzeratnyPortal\obj\Debug\netcoreapp3.1\InzeratnyPortal.genruntimeconfig.cache
+C:\Users\Simon\Documents\GIT\cvicny_projekt\InzeratnyPortal\obj\Debug\netcoreapp3.1\Razor\Views\Home\SearchResults.cshtml.g.cs
