@@ -28,7 +28,27 @@ namespace InzeratnyPortal.Controllers
 
             return View(items);
         }
+        
 
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        public IActionResult Save(string name)
+        {
+            var userId = _context.Users.Where(user => user.Email == User.Identity.Name).FirstOrDefault().Id;
+            var user = _context.Users.Where(user => user.Email == User.Identity.Name).FirstOrDefault();
+            if (name != null)
+            {
+                user.UserName = name;
+                _context.SaveChanges();
+            }
+
+            var items = _context.Item.Where(item => item.UserID == userId);
+
+            return View("Index", items);
+        }
 
     }
 }
