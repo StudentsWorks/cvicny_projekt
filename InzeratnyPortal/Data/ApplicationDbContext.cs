@@ -15,5 +15,7 @@ namespace InzeratnyPortal.Data
         }
         public DbSet<InzeratnyPortal.Models.Category> Category { get; set; }
         public DbSet<InzeratnyPortal.Models.Item> Item { get; set; }
+
+        public DbSet<AppUser> appUser;
     }
 }
